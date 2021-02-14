@@ -1,0 +1,11 @@
+stages:
+  - code_scan
+
+job_code_scan:
+  image: security/codescan:latest
+  stage: code_scan
+  script:
+    - sonar_full_scan.sh
+  tags:
+    - k3s
+
